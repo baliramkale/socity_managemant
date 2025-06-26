@@ -1,0 +1,37 @@
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.footer-heading {
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-link {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: #007bff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    color: #555;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    color: #007bff;
+}

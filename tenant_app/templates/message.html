@@ -1,0 +1,9 @@
+{% if messages %}
+<div class="d-flex justify-content-center">
+    {% for i in messages %}
+    <div class="alert alert-{{ i.tags }} col-12 col-md-6 col-lg-4">
+        {{ i }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

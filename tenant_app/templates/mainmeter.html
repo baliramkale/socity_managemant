@@ -1,0 +1,263 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+    <!-- jQuery Full version -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Admin Dashboard</title>
+    <style>
+        .marquee-wrapper {
+            width: 100%;
+            /* Full width */
+            overflow: hidden;
+            /* Hide overflow content */
+            background-color: #ff6347;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .marquee-text {
+            display: inline-block;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            white-space: nowrap;
+            /* Prevent wrapping */
+            animation: marquee-animation 15s linear infinite;
+            /* Slow speed */
+        }
+        
+        @keyframes marquee-animation {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .modal-footer {
+            background-color: #f1f1f1;
+        }
+        
+        .text-center1 :hover {
+            border-bottom: #007bff;
+            transform: rotatex(360deg);
+            transition: 2s;
+        }
+        /* main meter entry*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-container {
+            margin-bottom: 15px;
+        }
+        
+        .input-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .input-box {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #218838;
+        }
+        
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row g-0">
+            <!-- Sidebar Navigation -->
+            <nav class="col-12 col-md-2 bg-light pr-3">
+                <h1 class="h4 py-3 text-center text-primary">
+                    <i class="fas fa-ghost mr-2"></i>
+                    <span class="d-none d-lg-inline">
+                        Admin Dashboard
+                    </span>
+                </h1>
+                <div class="list-group text-center text-lg-left">
+                    <a href="index" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-home"></i>
+                        <span class="d-none d-lg-inline">Dashboard</span>
+                    </a>
+                    <a href="addtenant" class="list-group-item list-group-item-action">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="d-none d-lg-inline">Tenant Entry</span>
+                    </a>
+                    <a href="tenantdata" class="list-group-item list-group-item-action">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="d-none d-lg-inline">Tenant Record</span>
+                    </a>
+                    <a href="mainmeter" class="list-group-item list-group-item-action">
+                        <i class="fas fa-clipboard"></i>
+                        <span class="d-none d-lg-inline">Main Meter Entry</span>
+                    </a>
+                    <a href="submeter" class="list-group-item list-group-item-action">
+                        <i class="fas fa-flag"></i>
+                        <span class="d-none d-lg-inline">Sub Meter Entry</span>
+                    </a>
+                    <a href="tanker" class="list-group-item list-group-item-action">
+                        <i class="fas fa-truck"></i>
+                        <span class="d-none d-lg-inline">Tanker Entry</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-bolt"></i>
+                        <span class="d-none d-lg-inline">Total MSEB Bill</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="d-none d-lg-inline">Report</span>
+                    </a>
+                    <a href="gallary" class="list-group-item list-group-item-action">
+                        <i class="fas fa-photo-video"></i>
+                        <span class="d-none d-lg-inline">Gallary</span>
+                    </a>
+
+                    <a href="logout" class="list-group-item list-group-item-action">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="d-none d-lg-inline">Logout</span>
+                    </a>
+
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-12 col-md-10 p-4">
+                <div class="container">
+                    <div class="marquee-wrapper">
+                        <div class="marquee-text">Welcome To Shri Ganesh society Pune</div>
+                    </div>
+                    <!-- Image Section -->
+                    <form method="POST" action="mainmeterentry">
+                        {% csrf_token %}
+
+                        <div class="input-container">
+                            <label for="meter">Select Meter No</label>
+                            <select id="meter" name="meter" class="input-box">
+                                <option value="170015029032">170015029032 - Milind</option>
+                            </select>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="month">Month</label>
+                            <select id="month" name="month" class="input-box">
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="year">Year</label>
+                            <select id="year" name="year" class="input-box">
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                                <option value="2034">2034</option>
+                                <option value="2035">2035</option>
+                            </select>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="units">Units Consumed</label>
+                            <input type="number" id="units" name="units" class="input-box" placeholder="0" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" name="amount" class="input-box" placeholder="0" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+/* static/css/style.css */
+
+
+/* General styling */
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Form container styling */
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+
+/* Form input styling */
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+/* Button styling */
+
+.btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+/* Form title */
+
+h2 {
+    color: #333;
+}
+
+
+/* Add spacing to labels */
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}

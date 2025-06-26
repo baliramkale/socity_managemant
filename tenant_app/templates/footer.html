@@ -1,0 +1,102 @@
+{% load static %}
+
+<footer class="footer bg-light text-dark text-center py-4 animate-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>We are committed to providing quality services and enhancing community engagement. Join us today!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/index" class="footer-link">Dashboard</a></li>
+                    <li><a href="#" class="footer-link">Users</a></li>
+                    <li><a href="#" class="footer-link">Statistics</a></li>
+                    <li><a href="#" class="footer-link">Reports</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contact Us</h5>
+                <p>
+                    <i class="fas fa-phone-alt"></i> +1 (800) 123-4567 <br>
+                    <i class="fas fa-envelope"></i> info@shriganeshsociety.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mb-2">
+            &copy; <span id="current-year"></span> Shri Ganesh Society | All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Animation */
+    
+    .animate-footer {
+        animation: fadeInUp 2s ease-in-out;
+    }
+    /* Social Icons Hover */
+    
+    .social-icons {
+        margin: 15px 0;
+    }
+    
+    .social-icon {
+        color: #333;
+        font-size: 20px;
+        margin: 0 10px;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    
+    .social-icon:hover {
+        transform: scale(1.2);
+        color: #007bff;
+    }
+    /* Footer Links */
+    
+    .footer-link {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .footer-link:hover {
+        color: #007bff;
+    }
+    /* Fade In Animation */
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /* Responsive Design */
+    
+    @media (max-width: 768px) {
+        .footer {
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    // Auto-update year
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
