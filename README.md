@@ -30,10 +30,4 @@ This is a full-stack **Society Management System** built using **Python (Django)
 
 ---
 
-## 🚀 How to Run Locally
 
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/baliramkale/society-management.git
-cd society-management
